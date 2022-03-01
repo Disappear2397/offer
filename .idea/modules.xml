@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Mechaglot_Alpha2.iml" filepath="$PROJECT_DIR$/../Mechaglot_Alpha2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/offer.iml" filepath="$PROJECT_DIR$/offer.iml" />
+    </modules>
+  </component>
+</project>
