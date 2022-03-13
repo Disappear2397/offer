@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.排序;
 
 /**
  * @author LJ
