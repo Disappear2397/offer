@@ -10,6 +10,7 @@ import java.util.TreeSet;
  * @date 2022/3/14 13:57
  */
 //最不经常使用（LFU） 哈希表+平衡二叉树（Treeset） ,不用平衡二叉树也可用优先队列小顶堆  双百（较麻烦）：存储频次的HashMap改为直接用双向链表
+    //平衡二叉树：高度平衡的二叉查找树即高度平衡的二叉搜索树
 public class LFU{
     // 缓存容量，时间戳
     int capacity, time;
