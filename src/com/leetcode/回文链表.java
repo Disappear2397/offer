@@ -12,7 +12,7 @@ public class 回文链表{
     public class ListNode {
      int val;
      ListNode next;
-     ListNode() {}//如果你创造了一个带有参数的构造方法，那么无参的构造方法必须显式的写出来，否则会编译失败
+     ListNode() {}//如果你创造了一个带有参数的构造方法，无参数的构造方法是默认的，那么无参的构造方法必须显式的写出来，否则会编译失败
      ListNode(int val) { this.val = val; }
      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  }
