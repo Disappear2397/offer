@@ -18,7 +18,7 @@ public class 剑指68二叉树的最近公共祖先{
         TreeNode right;
         TreeNode(int x) { val = x; }
     }
-    //递归一   最简洁的答案
+    //递归一   最简洁的答案 最优 推荐
     public static TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) {
             return null;
