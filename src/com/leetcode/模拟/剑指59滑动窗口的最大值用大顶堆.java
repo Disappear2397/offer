@@ -10,14 +10,14 @@ import java.util.*;
  * @date 2021/11/16 11:37
  */
 public class 剑指59滑动窗口的最大值用大顶堆{
-    //单调队列（双端队列）
+    //单调队列（双端队列）首选
     public static int[] maxSlidingWindow1(int[] nums, int k) {
         if(nums == null || nums.length == 0) {
             return new int[0];
         }
         int n = nums.length;
         Deque<Integer> deque = new LinkedList<Integer>();
-        for (int i = 0; i < k; ++i) {
+        for (int i = 0; i < k; ++i) {//填充首次队列 注意填充的是下标值
             while (!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]) {
                 deque.pollLast();
             }
@@ -58,7 +58,7 @@ public class 剑指59滑动窗口的最大值用大顶堆{
         ans[0] = pq.peek()[0];
         for (int i = k; i < n; ++i) {
             pq.offer(new int[]{nums[i], i});
-            while (pq.peek()[1] <= i - k) {//这个值在数组nums中的位置出现在滑动窗口左边界的左侧时。永久出栈这个数
+            while (pq.peek()[1] <= i - k) {//这个值在数组nums中的位置出现在滑动窗口左边界的左侧时。永久出堆这个数
                 pq.poll();
             }
             ans[i - k + 1] = pq.peek()[0];
