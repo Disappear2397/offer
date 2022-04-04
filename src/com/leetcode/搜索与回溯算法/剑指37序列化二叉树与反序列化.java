@@ -16,7 +16,7 @@ public class 剑指37序列化二叉树与反序列化{
       TreeNode right;
       TreeNode(int x) { val = x; }
   }
-//深度优先搜索序列化与反序列化
+//深度优先搜索序列化与反序列化 相当于先序遍历的正反操作
     public String serialize(TreeNode root) {
       return rserialize(root, "");
   }

@@ -22,7 +22,7 @@ public class 环形链表{
     public boolean hasCycle1(ListNode head) {
         if(head == null || head.next == null ) return  false;
         ListNode fast = head, slow = head;
-        while (fast != null && fast.next !=null){
+        while (fast != null && fast.next !=null){//fast走两步，slow走一步
             slow = slow.next;
             fast = fast.next.next;
             if (slow == fast) return true;

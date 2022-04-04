@@ -18,7 +18,7 @@ public class 剑指59滑动窗口的最大值用大顶堆{
         int n = nums.length;
         Deque<Integer> deque = new LinkedList<Integer>();
         for (int i = 0; i < k; ++i) {//填充首次队列 注意填充的是下标值
-            while (!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]) {
+            while (!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]) {//比当前数组元素比队尾大，则对位出列
                 deque.pollLast();
             }
             deque.offerLast(i);
@@ -40,9 +40,8 @@ public class 剑指59滑动窗口的最大值用大顶堆{
     }
 
 
-    //优先队列
+    //优先队列 简单
     public static int[] maxSlidingWindow2(int[] nums, int k) {
-        ArrayDeque<Integer> objects = new ArrayDeque<>();
         int n = nums.length;
         PriorityQueue<int[]> pq = new PriorityQueue<int[]>(new Comparator<int[]>() {
             public int compare(int[] pair1, int[] pair2) {
