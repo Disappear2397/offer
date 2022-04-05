@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.括号题;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.Scanner;
  * @date 2021/11/30 13:42
  */
 public class 括号生成{
-    //回溯
+    //回溯 生成n对括号
     public static List<String> generateParenthesis1(int n) {
         List<String> ans = new ArrayList<String>();
         backtrack(ans, new StringBuilder(), 0, 0, n);

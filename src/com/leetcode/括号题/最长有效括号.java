@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.括号题;
 
 import javax.sound.midi.spi.SoundbankReader;
 import java.util.Deque;
@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @date 2021/12/2 10:06
  */
 public class 最长有效括号{
-    //栈实现
+    //栈实现    求有效的括号对数
     public static int longestValidParentheses1(String s) {
         int max = 0;
         Deque<Integer> stack = new LinkedList<Integer>();
@@ -46,6 +46,37 @@ public class 最长有效括号{
             }
         }
         return maxans;
+    }
+
+    //不需要额外的空间  left right两个计数器从左至右依次计数 再从右至左依次计数
+    public int longestValidParentheses3(String s) {
+        int left = 0, right = 0, maxlength = 0;
+        for (int i = 0; i < s.length(); i++) {//从左至右依次计数
+            if (s.charAt(i) == '(') {
+                left++;
+            } else {
+                right++;
+            }
+            if (left == right) {
+                maxlength = Math.max(maxlength, 2 * right);
+            } else if (right > left) { //当right计数器比left计数器大时，我们将 left 和 right 计数器同时变回 0
+                left = right = 0;
+            }
+        }
+        left = right = 0;
+        for (int i = s.length() - 1; i >= 0; i--) {//从右至左依次计数
+            if (s.charAt(i) == '(') {
+                left++;
+            } else {
+                right++;
+            }
+            if (left == right) {
+                maxlength = Math.max(maxlength, 2 * left);
+            } else if (left > right) { //当left计数器比right计数器大时，我们将 left 和 right 计数器同时变回 0
+                left = right = 0;
+            }
+        }
+        return maxlength;
     }
 
     public static void main(String[] args) {

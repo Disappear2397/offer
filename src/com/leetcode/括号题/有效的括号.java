@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.括号题;
 
 import java.util.*;
 
@@ -28,8 +28,8 @@ public class 有效的括号{
                     return false;
                 }
                 stack.pop();
-            } else {
-                stack.push(ch);//在栈内的都是左括号
+            } else {//左括号（就是pair的value）入栈
+                stack.push(ch);
             }
         }
         return stack.isEmpty();
