@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * @date 2022/4/4 14:11
  */
 public class 最长递增子序列{
+    //求最长递增子序列的长度
     //动态规划 n^2  动态方程：dp[i]=max(dp[j])+1  其中0≤j<i且num[j]<num[i]
     public int lengthOfLIS1(int[] nums) {
         if (nums.length == 0) {
@@ -20,7 +21,7 @@ public class 最长递增子序列{
         for (int i = 1; i < nums.length; i++) {
             dp[i] = 1;
             for (int j = 0; j < i; j++) {
-                if (nums[i] > nums[j]) {
+                if (nums[i] > nums[j]) { //更新长度
                     dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
