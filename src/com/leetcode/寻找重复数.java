@@ -10,7 +10,7 @@ import java.util.concurrent.TransferQueue;
  * @date 2022/4/3 19:56
  */
 public class 寻找重复数{
-    //二分查找 cnt 表示nums数组中小于等于i的数有多少个  不太好理解 时间复杂度高  时间：O(nlogn) 空间：O（1）
+    //二分查找 cnt[i] 表示nums数组中小于等于i的数有多少个  不太好理解 时间复杂度高  时间：O(nlogn) 空间：O（1）
     public int findDuplicate(int[] nums) {
         int n = nums.length;
         int l = 1, r = n - 1, ans = -1;
@@ -53,6 +53,6 @@ public class 寻找重复数{
         for (int i = 0; i < nums.length; i++) {
             if (!pos.add(nums[i])) return  nums[i];
         }
-    return -1;
+        return -1;
     }
 }

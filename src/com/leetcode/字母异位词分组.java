@@ -8,7 +8,7 @@ import java.util.*;
  * @date 2021/12/9 15:06
  */
 public class 字母异位词分组{
-    //哈希表的键为一组字母异位词的标志，哈希表的值为一组字母异位词列表
+    //哈希表的键为一组字母异位词的标志(唯一排序)，哈希表的值为一组字母异位词列表
     public static List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<String, List<String>>();
         for (String str : strs) {

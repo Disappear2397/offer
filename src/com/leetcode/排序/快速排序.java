@@ -32,7 +32,7 @@ public class 快速排序{
                 }
 
             }
-            //最后将基准为与i和j相等位置的数字交换
+            //最后将基准 与 i和j相等位置的数字交换
             arr[low] = arr[i];
             arr[i] = temp;
             //递归调用左半数组
@@ -47,6 +47,4 @@ public class 快速排序{
             System.out.println(arr[i]);
         }
     }
-
-
 }

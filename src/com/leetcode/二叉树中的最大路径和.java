@@ -10,6 +10,7 @@ import java.util.Arrays;
  * @date 2021/12/23 10:33
  */
 public class 二叉树中的最大路径和{
+    //求从任意节点开始的最大路径和
     public static class TreeNode {
       int val;
       TreeNode left;

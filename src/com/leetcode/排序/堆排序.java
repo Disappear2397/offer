@@ -5,15 +5,16 @@ package com.leetcode.排序;
  * @version 1.0
  * @date 2022/3/13 20:39
  */
-public class 堆排序{
+public class 堆排序{//小顶堆
     private static void heapSort(int[] arr) {
         //创建堆
         for (int i = (arr.length - 1) / 2; i >= 0; i--) {
-            //从第一个非叶子结点从下至上，从右至左调整结构
+            //从第一个非叶子结点从下至上，从右至左调整结构  第一个非叶子节点：arr[(arr.length - 1) / 2]
             adjustHeap(arr, i, arr.length);
         }
 
-        //调整堆结构+交换堆顶元素与末尾元素
+        //调整小顶堆 进行n-1次循环，完成排序
+        //其实是依次交换堆顶元素（最小数）与末尾元素，那么每次排序最后一个数就是已排序号的数
         for (int i = arr.length - 1; i > 0; i--) {
             //将堆顶元素与末尾元素进行交换
             int temp = arr[i];
@@ -58,5 +59,12 @@ public class 堆排序{
             lChild = 2 * lChild + 1;
         }
         arr[parent] = temp;
+    }
+    public static void main(String[] args){
+        int[] arr = {10,7,2,4,7,62,3,4,2,1,8,9,19};
+        heapSort(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
     }
 }

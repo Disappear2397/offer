@@ -24,14 +24,12 @@ public class 链表入环点{
             while((fast != null) && (fast.next != null)){
                 fast = fast.next.next;
                 slow = slow.next;
-                if(fast == slow){
+                if(fast == slow){//第一次相遇 fast走两步，slow走一步
                     //有环
                     //记住相遇点的指针，一个从相遇点开始，一个从头开始，相遇的地方就是环的入口点
+                    // 因为此时从相遇点到入环点的距离加上 n−1 圈的环长，恰好等于从链表头部到入环点的距离
                     ListNode tmp = head;
-                    //假设链表的开始就是入口点
-                    //如果链表的开始是入口点，最后一定在开始的位置相遇
-                    //因为fast是slow的两倍，当fast走了一圈的时候,slow走半圈，最后在fast走两圈，slow走一圈的位置相遇
-                    if(tmp == fast){
+                    if(tmp == fast){//第二次相遇  ast和slow都走一步
                         return fast;
                     }
                     while(true){

@@ -27,7 +27,7 @@ public class 环形链表2{
           if (fast == slow) break;
       }
       fast = head;
-      while (slow != fast) {//第二次相遇，fast和slow都走一步
+      while (slow != fast) {//第二次相遇，fast和slow都走一步，此时从相遇点到入环点的距离加上 n−1 圈的环长，恰好等于从链表头部到入环点的距离
           slow = slow.next;
           fast = fast.next;
       }

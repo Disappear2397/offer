@@ -7,7 +7,8 @@ import java.util.*;
  * @version 1.0
  * @date 2021/11/2 15:19
  */
-public class 剑指34二叉树和为某一值的路径{
+public class 剑指34二叉树和为某一值的路径即路径总和2那题{
+    //找出所有 从根节点到叶子节点 路径总和等于给定目标和的路径
     public static class TreeNode{
         int val;
         TreeNode left;
@@ -24,7 +25,7 @@ public class 剑指34二叉树和为某一值的路径{
             this.right = right;
         }
     }
-    //深度优先 dfs
+    //深度优先 dfs  优先
     static List<List<Integer>> ret = new LinkedList<List<Integer>>();
     static Deque<Integer> path = new LinkedList<Integer>();
     public static List<List<Integer>> pathSum(TreeNode root, int target) {
@@ -55,7 +56,7 @@ public class 剑指34二叉树和为某一值的路径{
     }
     static void recur(TreeNode root, int tar) {
         if(root == null) return;
-        path1.add(root.val);
+        path1.add(root.val);//默认添加在队尾
         tar -= root.val;
         if(tar == 0 && root.left == null && root.right == null)
             res.add(new LinkedList(path1));
@@ -76,13 +77,13 @@ public class 剑指34二叉树和为某一值的路径{
         a.right.right.left = new TreeNode(5);
         a.right.right.right = new TreeNode(1);
         a.right.left = new TreeNode(13);
-        List<List<Integer>> list = pathSum2(a,22);
+        List<List<Integer>> list = pathSum1(a,22);
         System.out.println(list);
     }
 
 
 
-//广度优先？？？？？？？？？？？？
+
     //广度优先 bfs
     static List<List<Integer>> ret1 = new LinkedList<List<Integer>>();
     static Map<TreeNode, TreeNode> map = new HashMap<TreeNode, TreeNode>();
